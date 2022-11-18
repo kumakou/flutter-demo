@@ -66,16 +66,16 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Icon(FontAwesomeIcons.gift, color: Colors.teal),
-          Text(
-            '$_counter',
-            style: Theme.of(context).textTheme.headline4,
-          ),
-          if (_counter % 2 == 0)
-            Text('偶数です', style: TextStyle(fontSize: 20, color: Colors.red)),
-          TextButton(
-            onPressed: () => {print("ボタンが押されたよ")},
-            child: const Text("テキストボタン"),
-          ),
+          // Text(
+          //   '$_counter',
+          //   style: Theme.of(context).textTheme.headline4,
+          // ),
+          // if (_counter % 2 == 0)
+          //   Text('偶数です', style: TextStyle(fontSize: 20, color: Colors.red)),
+          // TextButton(
+          //   onPressed: () => {print("ボタンが押されたよ")},
+          //   child: const Text("テキストボタン"),
+          // ),
           AnimatedOpacity(
               opacity: _flag ? 0.01 : 1.0,
               duration: const Duration(seconds: 3),
@@ -96,25 +96,25 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 50,
                   height: 50,
                   child: Container(color: Colors.green))),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
-                Icon(
-                  Icons.favorite,
-                  color: Colors.pink,
-                  size: 24.0,
-                ),
-                Icon(
-                  Icons.audiotrack,
-                  color: Colors.green,
-                  size: 30.0,
-                ),
-                Icon(
-                  Icons.beach_access,
-                  color: Colors.blue,
-                  size: 36.0,
-                ),
-              ]),
+          // Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //     children: const [
+          //       Icon(
+          //         Icons.favorite,
+          //         color: Colors.pink,
+          //         size: 24.0,
+          //       ),
+          //       Icon(
+          //         Icons.audiotrack,
+          //         color: Colors.green,
+          //         size: 30.0,
+          //       ),
+          //       Icon(
+          //         Icons.beach_access,
+          //         color: Colors.blue,
+          //         size: 36.0,
+          //       ),
+          //     ]),
         ],
       ),
       floatingActionButton: FloatingActionButton(
