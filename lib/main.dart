@@ -1,5 +1,9 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_app/login.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,96 +44,54 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  String _type = "偶数";
-
-  void _incrementCounter() {
+  XFile? _image;
+  final imagePicker = ImagePicker();
+  // カメラから画像を取得するメソッド
+  Future getImageFromCamera() async {
+    final pickedFile = await imagePicker.pickImage(source: ImageSource.camera);
     setState(() {
-      _counter++;
+      if (pickedFile != null) {
+        _image = XFile(pickedFile.path);
+      }
     });
   }
 
-  bool _flag = false;
-  _click() async {
+  // ギャラリーから画像を取得するメソッド
+  Future getImageFromGarally() async {
+    final pickedFile = await imagePicker.pickImage(source: ImageSource.gallery);
     setState(() {
-      _flag = !_flag;
+      if (pickedFile != null) {
+        _image = XFile(pickedFile.path);
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(children: const [Icon(Icons.create), Text("初めてのタイトル")]),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Icon(FontAwesomeIcons.gift, color: Colors.teal),
-          // Text(
-          //   '$_counter',
-          //   style: Theme.of(context).textTheme.headline4,
-          // ),
-          // if (_counter % 2 == 0)
-          //   Text('偶数です', style: TextStyle(fontSize: 20, color: Colors.red)),
-          // TextButton(
-          //   onPressed: () => {print("ボタンが押されたよ")},
-          //   child: const Text("テキストボタン"),
-          // ),
-          AnimatedOpacity(
-              opacity: _flag ? 0.01 : 1.0,
-              duration: const Duration(seconds: 3),
-              child: Text(
-                "ちんちん",
-                style: Theme.of(context).textTheme.headline4,
-              )),
-          AnimatedSize(
-              duration: const Duration(seconds: 3),
-              child: SizedBox(
-                  width: _flag ? 50 : 200,
-                  height: _flag ? 50 : 200,
-                  child: Container(color: Colors.purple))),
-          AnimatedAlign(
-              duration: const Duration(seconds: 3),
-              alignment: _flag ? Alignment.topLeft : Alignment.bottomRight,
-              child: SizedBox(
-                  width: 50,
-                  height: 50,
-                  child: Container(color: Colors.green))),
-          // Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-          //     children: const [
-          //       Icon(
-          //         Icons.favorite,
-          //         color: Colors.pink,
-          //         size: 24.0,
-          //       ),
-          //       Icon(
-          //         Icons.audiotrack,
-          //         color: Colors.green,
-          //         size: 30.0,
-          //       ),
-          //       Icon(
-          //         Icons.beach_access,
-          //         color: Colors.blue,
-          //         size: 36.0,
-          //       ),
-          //     ]),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _click(),
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-      drawer: const Drawer(
-          child: Center(
-        child: Text("Drawer"),
-      )),
-      endDrawer: const Drawer(
-          child: Center(
-        child: Text("EndDrawer"),
-      )),
-    );
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: Login(),
+
+        //  Center(
+        //     // 取得した画像を表示(ない場合はメッセージ)
+        //     child: _image == null
+        //         ? Text(
+        //             '写真を選択してください',
+        //             style: Theme.of(context).textTheme.headline4,
+        //           )
+        //         : Image.file(File(_image!.path))),
+        floatingActionButton:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          // カメラから取得するボタン
+          FloatingActionButton(
+              onPressed: getImageFromCamera,
+              child: const Icon(Icons.photo_camera)),
+          // ギャラリーから取得するボタン
+          FloatingActionButton(
+              onPressed: getImageFromGarally,
+              child: const Icon(Icons.photo_album))
+        ]));
   }
 }
