@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import '../../widgets/card-swipe/cardstackwidget.dart';
+import '../../widgets/card-swipe/parts/backgroundcurvewidget.dart';
 
 class Page_Favorite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(
-          "推し選手",
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
-    );
+        body: Stack(
+      children: const [
+        BackgroudCurveWidget(),
+        CardsStackWidget(),
+      ],
+    ));
   }
 }
