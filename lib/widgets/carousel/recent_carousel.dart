@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_options.dart';
+import 'package:flutter_app/screens/user_page.dart';
 
 final review = [
   {
@@ -70,16 +71,25 @@ class Recent_Carousel extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      CircleAvatar(
-                        radius: 10,
-                        backgroundColor: Colors.white,
-                        backgroundImage: NetworkImage(r["user_icon"]!),
-                      ),
-                      Text(r["user_name"]!)
-                    ],
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => UserPage())
+                       );
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        CircleAvatar(
+                          radius: 10,
+                          backgroundColor: Colors.white,
+                          backgroundImage: NetworkImage(r["user_icon"]!),
+                        ),
+                        Text(r["user_name"]!)
+                      ],
+                      
+                    ),
                   )
                 ],
               ));
