@@ -36,7 +36,7 @@ class SignupScreen extends HookConsumerWidget {
     void signUpUser() async {
       Uint8List bytesImage;
       if (image.value == null) {
-        final byteData = await rootBundle.load('assets/profile_icon.png');
+        final byteData = await rootBundle.load('assets/image/profile_icon.png');
         bytesImage = byteData.buffer
             .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes);
       } else {
