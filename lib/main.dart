@@ -2,10 +2,19 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/login.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:flutter_app/sample/firestoredemo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import './sample/firestoredemo.dart';
+import './sample/swiper.dart';
+import './card-swipe/SwipePage.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -44,27 +53,27 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  XFile? _image;
-  final imagePicker = ImagePicker();
-  // カメラから画像を取得するメソッド
-  Future getImageFromCamera() async {
-    final pickedFile = await imagePicker.pickImage(source: ImageSource.camera);
-    setState(() {
-      if (pickedFile != null) {
-        _image = XFile(pickedFile.path);
-      }
-    });
-  }
+  // XFile? _image;
+  // final imagePicker = ImagePicker();
+  // // カメラから画像を取得するメソッド
+  // Future getImageFromCamera() async {
+  //   final pickedFile = await imagePicker.pickImage(source: ImageSource.camera);
+  //   setState(() {
+  //     if (pickedFile != null) {
+  //       _image = XFile(pickedFile.path);
+  //     }
+  //   });
+  // }
 
-  // ギャラリーから画像を取得するメソッド
-  Future getImageFromGarally() async {
-    final pickedFile = await imagePicker.pickImage(source: ImageSource.gallery);
-    setState(() {
-      if (pickedFile != null) {
-        _image = XFile(pickedFile.path);
-      }
-    });
-  }
+  // // ギャラリーから画像を取得するメソッド
+  // Future getImageFromGarally() async {
+  //   final pickedFile = await imagePicker.pickImage(source: ImageSource.gallery);
+  //   setState(() {
+  //     if (pickedFile != null) {
+  //       _image = XFile(pickedFile.path);
+  //     }
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -72,26 +81,6 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: Login(),
-
-        //  Center(
-        //     // 取得した画像を表示(ない場合はメッセージ)
-        //     child: _image == null
-        //         ? Text(
-        //             '写真を選択してください',
-        //             style: Theme.of(context).textTheme.headline4,
-        //           )
-        //         : Image.file(File(_image!.path))),
-        floatingActionButton:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          // カメラから取得するボタン
-          FloatingActionButton(
-              onPressed: getImageFromCamera,
-              child: const Icon(Icons.photo_camera)),
-          // ギャラリーから取得するボタン
-          FloatingActionButton(
-              onPressed: getImageFromGarally,
-              child: const Icon(Icons.photo_album))
-        ]));
+        body: SingleChildScrollView(child: Column(children: [Swipepage()])));
   }
 }
