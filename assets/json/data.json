@@ -1,0 +1,185 @@
+{
+    "team": "ベガルタ仙台",
+    "player": [
+        {
+            "playername": "小畑 裕馬",
+            "age": 21,
+            "position": "GK",
+            "number": "1"
+        },
+        {
+            "playername": "井岡 海都",
+            "age": 25,
+            "position": "GK",
+            "number": "21"
+        },
+        {
+            "playername": "ネデリコ・ストイシッチ",
+            "age": 24,
+            "position": "GK",
+            "number": "22"
+        },
+        {
+            "playername": "杉本 大地",
+            "age": 23,
+            "position": "GK",
+            "number": "29"
+        },
+        {
+            "playername": "福森 直也",
+            "age": 30,
+            "position": "DF",
+            "number": "3"
+        },
+        {
+            "playername": "蜂須賀 孝治",
+            "age": 32,
+            "position": "DF",
+            "number": "4"
+        },
+        {
+            "playername": "若狭 大志",
+            "age": 33,
+            "position": "DF",
+            "number": "5"
+        },
+        {
+            "playername": "平岡 康裕",
+            "age": 36,
+            "position": "DF",
+            "number": "13"
+        },
+        {
+            "playername": "吉野 恭平",
+            "age": 28,
+            "position": "DF",
+            "number": "16"
+        },
+        {
+            "playername": "キム・テヒョン",
+            "age": 22,
+            "position": "DF",
+            "number": "20"
+        },
+        {
+            "playername": "真瀬 拓海",
+            "age": 24,
+            "position": "DF",
+            "number": "25"
+        },
+        {
+            "playername": "内田 裕斗",
+            "age": 27,
+            "position": "DF",
+            "number": "41"
+        },
+        {
+            "playername": "佐藤　瑶大",
+            "age": 24,
+            "position": "DF",
+            "number": "47"
+        },
+        {
+            "playername": "レアンドロ・デサバト",
+            "age": 32,
+            "position": "MF",
+            "number": "6"
+        },
+        {
+            "playername": "松下　佳貴",
+            "age": 28,
+            "position": "MF",
+            "number": "8"
+        },
+        {
+            "playername": "梁　勇基",
+            "age": 40,
+            "position": "MF",
+            "number": "10"
+        },
+        {
+            "playername": "石原　崇兆",
+            "age": 30,
+            "position": "MF",
+            "number": "14"
+        },
+        {
+            "playername": "富田　晋吾",
+            "age": 36,
+            "position": "MF",
+            "number": "17"
+        },
+        {
+            "playername": "氣田　亮真",
+            "age": 25,
+            "position": "MF",
+            "number": "18"
+        },
+        {
+            "playername": "大曽根　広汰",
+            "age": 23,
+            "position": "MF",
+            "number": "24"
+        },
+        {
+            "playername": "加藤　千尋",
+            "age": 24,
+            "position": "MF",
+            "number": "26"
+        },
+        {
+            "playername": "鎌田　大夢",
+            "age": 21,
+            "position": "MF",
+            "number": "32"
+        },
+        {
+            "playername": "フォギーニョ",
+            "age": 30,
+            "position": "MF",
+            "number": "35"
+        },
+        {
+            "playername": "オナイウ　情滋",
+            "age": 22,
+            "position": "MF",
+            "number": "46"
+        },
+        {
+            "playername": "遠藤　康",
+            "age": 34,
+            "position": "MF",
+            "number": "50"
+        },
+        {
+            "playername": "中山　仁斗",
+            "age": 30,
+            "position": "FW",
+            "number": "9"
+        },
+        {
+            "playername": "フェリペ・カルドーゾ",
+            "age": 24,
+            "position": "FW",
+            "number": "15"
+        },
+        {
+            "playername": "皆川　佑介",
+            "age": 31,
+            "position": "FW",
+            "number": "19"
+        },
+        {
+            "playername": "富樫　敬真",
+            "age": 29,
+            "position": "FW",
+            "number": "42"
+        },
+        {
+            "playername": "中島　元彦",
+            "age": 23,
+            "position": "FW",
+            "number": "44"
+        }
+    ]
+}
