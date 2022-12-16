@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'page_vegalta.dart';
 import 'page_favorite.dart';
 import 'page_jleague.dart';
-import '../post_page.dart';
 import '../add_post_screen.dart';
 
 class Home extends StatelessWidget {

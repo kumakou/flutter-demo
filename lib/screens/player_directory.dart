@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'post_page.dart';
 import 'add_post_screen.dart';
 
 class PlayerDirectory extends StatelessWidget {
